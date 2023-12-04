@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kendala dan Solusi</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            
+            background-color:cadetblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: auto;
+        }
+
+        .content {
+            background-color: aliceblue;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: left;
+            width: 90vh;
+            height: 50vh;
+        }
+        .judul {
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        #pertanyaanForm {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #nama {
+            margin: 10px 0;
+            padding: 8px;
+            width: 100%;
+            border-radius: 15px;
+            box-sizing: border-box;
+            text-align: left;
+            
+        }
+        
+        #KendalaKu {
+            margin: 10px 0;
+            padding: 8px;
+            width: 100%;
+            border-radius: 15px;
+            box-sizing: border-box;
+            text-align: left;
+        }
+
+        .outputContainer {
+            margin-top: 20px;
+        }
+
+        #jawabanOutput {
+            color: #333;
+            text-align: center;
+            display: flex;
+        }
+
+        .cari-btn {
+            background-color: cadetblue;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            width: 20%;
+            margin-left: 80%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1 class="judul">FORM KENDALA</h1>
+
+            <form class="pertanyaanForm">
+                <label for="nama" ></label>
+                <input type="text" id="nama" required placeholder="Isikan Nama!">
+                <label for="KendalaKu">KendalaKu Saat PKL:</label>
+                <select id="KendalaKu">
+                    <option value="" disabled selected>Pilih Jawaban</option>
+                    <option value="kendala1">Lokasi PKL Jauh</option>
+                    <option value="kendala2">Kurang beradaptasi</option>
+                    <option value="kendala3">Kurangnya pemahaman dan keterampilan </option>
+                </select>
+                <button type="button" class="cari-btn" onclick="tanggapanKendala()">Cari!</button>
+            </form>
+
+            <div class="outputContainer">
+            <p id="jawabanOutput"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function tanggapanKendala() {
+            var nama = document.getElementById('nama');
+            var KendalaKu = document.getElementById('KendalaKu');
+            var jawabanOutput = document.getElementById('jawabanOutput');
+
+            var pertanyaan = nama.value;
+            var jenisSolusi = KendalaKu.value;
+
+            var Solusi = "";
+
+            switch (jenisSolusi) {
+    case "kendala1":
+        Solusi = "Selalu berangkat lebih awal dan mengusahakan datang 15 menit sebelum jam masuk. Merencanakan rute perjalanan yang efisien dan hindari kemacetan jika memungkinkan.";
+        break;
+    case "kendala2":
+        Solusi = "Selalu bersikap ramah dan selalu menawarkan bantuan kepada pegawai lain.";
+        break;
+    case "kendala3":
+        Solusi = "Memanfaatkan pembelajaran dari internet atau buku yang dapat membantu meningkatkan keterampilan dan pengetahuan yang diperlukan.";
+        break;
+    default:
+        Solusi = "Halo bestie! Selamat datang!.";
+}
+            jawabanOutput.textContent = 'Solusi: ' + Solusi;
+        }
+    </script>
+</body>
+</html>
+
+

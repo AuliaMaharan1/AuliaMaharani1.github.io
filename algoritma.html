@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kegiatan</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color:cadetblue;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100%;
+        }
+
+        #container {
+            background-color:aliceblue;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            height: 80%;
+        }
+
+        h1 {
+            color: #333;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }
+
+        #Checkbox {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-end;
+        }
+
+        #Checkbox label {
+           margin: auto;
+            margin: 2% 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%; 
+            
+        }
+
+        #Checkbox input {
+            margin-left: 5px; 
+        }
+
+        #Checkbox button {
+            background-color:cadetblue;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 100%;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+
+        #outputContainer {
+            margin-top: 20px;
+        }
+
+        #jawabanOutput {
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>KEGIATAN KU SAAT PKL</h1>
+
+        <form id="Checkbox">
+
+            <label for="Checkbox1"> 1. Admin menerima pesan masuk dari pengguna melalui WhatsApp.<input type="checkbox" class="pertanyaanCheckbox" value="Checkbox1"></label>
+            <label for="Checkbox2"> 2. Pesan diarahkan ke departemen atau staff yang tepat berdasarkan masalah. <input type="checkbox" class="pertanyaanCheckbox" value="Checkbox2"></label>
+            <label for="Checkbox3"> 3. Menggunakan bot/template respon untuk menghemat waktu dalam menanggapi pertanyaan umum atau standar. <input type="checkbox" class="pertanyaanCheckbox" value="Checkbox3"></label>
+            <label for="Checkbox4"> 4. Admin memeriksa basis pengetahuan internal atau FAQ untuk memberikan jawaban yang akurat dan cepat. <input type="checkbox" class="pertanyaanCheckbox" value="Checkbox4"></label>
+            <label for="Checkbox5"> 5. Melakukan pembaruan penting, gangguan layanan, atau informasi lain yang relevan. <input type="checkbox" class="pertanyaanCheckbox" value="Checkbox5"></label>
+            <label for="Checkbox6"> 6. memastikan bahwa tidak ada pesan yang terlewatkan. <input type="checkbox" class="pertanyaanCheckbox" value="Checkbox6"></label>
+            <label for="Checkbox7"> 7. memberikan pesan penutup dan memastikan bahwa masalah telah selesai. <input type="checkbox" class="pertanyaanCheckbox" value="Checkbox7"></label>
+           
+            <button type="button" onclick="tanggapanKendala()">Cari!</button>
+        </form>
+
+        <div id="outputContainer">
+            <p id="jawabanOutput"></p>
+        </div>
+    </div>
+
+    <script>
+         function tanggapanKendala() {
+            var checkboxes = document.getElementsByClassName('pertanyaanCheckbox');
+
+            for (var i = 0; i < checkboxes.length; i++) {
+                var checkbox = checkboxes[i];
+
+                if (checkbox.checked) {
+                    jawaban = berikanJawaban(checkbox.value);
+                    break; 
+                }
+            }
+
+            jawabanOutput.textContent = 'Jawaban: ' + jawaban;
+        }
+
+        function berikanJawaban(checkboxValue) {
+            switch (checkboxValue) {
+                case "Checkbox1":
+                    return "Algoritma Recursive";
+                case "Checkbox2":
+                    return "Algoritma Recursive";
+                case "Checkbox3":
+                    return "Algoritma Recursive";
+                case "Checkbox4":
+                    return "Algoritma Recursive";
+                case "Checkbox5":
+                    return "Algoritma Recursive";
+                case "Checkbox6":
+                    return "Algoritma Recursive";
+                case "Checkbox7":
+                    return "Algoritma Recursive";
+                case "Checkbox8":
+                    return "Algoritma Recursive.";
+            }
+        }
+    </script>
+</body>
+</html>
+
+

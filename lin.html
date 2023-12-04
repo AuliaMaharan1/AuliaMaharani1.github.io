@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <h2>Form Kegiatan</h2>
+        <form id="formKegiatan" onsubmit="submitForm(event)">
+                <div class="form-group">
+                    <label for="">Nama</label>
+                    <input type="text">
+                </div>
+                <div class="form-group">
+                    <label for="">Kelas</label>
+                    <input type="text">
+                </div>
+                <div class="form-group">
+                    <label for="">Proses Kegiatan</label>
+                    <textarea name="" id="" rows="5"></textarea>
+                </div>
+                <div class="form-group">
+                    <button class="submit">Submit</button>
+                </div>
+            </form>
+    </form>
+    <div id="output" class="output">jawaban</div> 
+    <script src="script.js">function submitForm(event) {
+        // Hindari pengiriman form secara default
+        event.preventDefault();
+    
+        // Dapatkan nilai dari input dan textarea
+        var nama = document.querySelector('#formKegiatan input[name="nama"]').value;
+        var kelas = document.querySelector('#formKegiatan input[name="kelas"]').value;
+        var proses = document.querySelector('#formKegiatan textarea[name="proses"]').value;
+    
+        // Buat jawaban
+        var jawaban = "Nama: " + nama + "blalallalal";
+        jawaban += "Kelas: " + kelas + "blalalalallala";
+        jawaban += "Proses Kegiatan: " + proses + "blalalalallalalala";
+    
+        // Tampilkan jawaban di elemen output
+        document.getElementById("output").innerHTML = jawaban;
+    }
+    </script>
+    </body>
+    </html>
+</body>
+</html>
